@@ -15,6 +15,15 @@ const reducer = (currentState: typeof initialState, action: TAction) => {
   switch (type) {
     case "addTodo":
       return [...currentState, payload];
+    case "deleteTodo":
+      return [...currentState.filter((todo) => todo.id !== payload.id)];
+    case "completeTodo":
+      currentState.forEach((todo) => {
+        if (todo.id === payload.id) {
+          todo.isCompleted = true;
+        }
+      });
+      return [...currentState];
     default:
       return currentState;
   }

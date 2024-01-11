@@ -1,20 +1,29 @@
 import { ChangeEvent, useContext } from "react";
+import toast from "react-hot-toast";
 import { TodoContext } from "../../context/TodoProvider";
 import { TTodo } from "../../context/TodoProvider.interface";
 
 const TodoForm = () => {
   const { state, dispatch } = useContext(TodoContext);
-  console.log(state);
+
   function handleFormSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
     const title: string = e.target.title.value;
     const isCompleted: string = e.target.isCompleted.value;
+    if (!title) {
+      toast.error("Title is required!");
+      return;
+    } else if (!isCompleted) {
+      toast.error("isCompleted is required!");
+      return;
+    }
     const todo: TTodo = {
-      id: Math.round(Math.random() * 10).toString(),
+      id: Math.round(Math.random() * 100).toString(),
       title,
       isCompleted: isCompleted === "true" ? true : false,
     };
     dispatch({ type: "addTodo", payload: todo });
+    e.target.reset();
   }
   return (
     <div>
