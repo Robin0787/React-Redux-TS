@@ -1,5 +1,6 @@
 import { createContext, useReducer } from "react";
 import {
+  ActionTypes,
   TAction,
   TTodo,
   TTodoContextValues,
@@ -13,17 +14,16 @@ const initialState: TTodo[] = [
 const reducer = (currentState: typeof initialState, action: TAction) => {
   const { type, payload } = action;
   switch (type) {
-    case "addTodo":
+    case ActionTypes.ADD_TODO:
       return [...currentState, payload];
-    case "deleteTodo":
+    case ActionTypes.COMPLETE_TODO:
+      return [
+        ...currentState.map((todo) =>
+          todo.id === payload.id ? { ...todo, isCompleted: true } : todo
+        ),
+      ];
+    case ActionTypes.DELETE_TODO:
       return [...currentState.filter((todo) => todo.id !== payload.id)];
-    case "completeTodo":
-      currentState.forEach((todo) => {
-        if (todo.id === payload.id) {
-          todo.isCompleted = true;
-        }
-      });
-      return [...currentState];
     default:
       return currentState;
   }

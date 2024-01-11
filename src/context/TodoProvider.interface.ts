@@ -17,6 +17,12 @@ export type TTodo = {
 };
 
 export type TAction = {
-  type: string;
+  type: "addTodo" | "completeTodo" | "deleteTodo";
   payload: TTodo;
 };
+
+export const ActionTypes = {
+  ADD_TODO: "addTodo",
+  COMPLETE_TODO: "completeTodo",
+  DELETE_TODO: "deleteTodo",
+} as const;
