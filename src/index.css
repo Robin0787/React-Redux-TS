@@ -27,6 +27,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .btn {
-  @apply px-6 py-[10px] text-white bg-[#ffffff40] rounded-md cursor-pointer 
-  hover:bg-[#ffffff50] duration-300 capitalize w-[320px] mx-auto;
+  @apply px-6 py-[10px] text-white/80 bg-[#ffffff40] rounded-md cursor-pointer 
+  hover:bg-[#ffffff50] duration-300 capitalize w-[220px] mx-auto;
 }
