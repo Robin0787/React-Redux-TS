@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { TodoContext } from "../../context/TodoProvider";
-import { TTodo } from "../../context/TodoProvider.interface";
+import { TodoContext } from "../../../context/TodoProvider";
+import { TTodo } from "../../../context/TodoProvider.interface";
 import SingleTodo from "./SingleTodo";
 
 const ShowTodo = () => {

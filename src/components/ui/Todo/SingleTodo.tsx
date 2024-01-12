@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { FaTrash } from "react-icons/fa";
 import { MdOutlineDone } from "react-icons/md";
-import { TodoContext } from "../../context/TodoProvider";
-import { ActionTypes, TTodo } from "../../context/TodoProvider.interface";
+import { TodoContext } from "../../../context/TodoProvider";
+import { ActionTypes, TTodo } from "../../../context/TodoProvider.interface";
 
 type TSingleTodoProps = {
   todo: TTodo;

@@ -1,4 +1,4 @@
-import Todo from "../../components/Todo/Todo";
+import Todo from "../../components/ui/Todo/Todo";
 
 const Home = () => {
   return (
