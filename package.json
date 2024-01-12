@@ -9,7 +9,8 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "push": "git add . && git commit -m 'Updated' && git push && clear"
+    "push": "git add . && git commit -m 'Updated' && git push && clear",
+    "push:with-redux": "git add . && git commit -m 'Updated' && git push origin with-redux && clear"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
