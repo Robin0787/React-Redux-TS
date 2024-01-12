@@ -1,7 +1,7 @@
 import { ChangeEvent, useContext } from "react";
 import toast from "react-hot-toast";
-import { TodoContext } from "../../context/TodoProvider";
-import { ActionTypes, TTodo } from "../../context/TodoProvider.interface";
+import { TodoContext } from "../../../context/TodoProvider";
+import { ActionTypes, TTodo } from "../../../context/TodoProvider.interface";
 
 const TodoForm = () => {
   const { state, dispatch } = useContext(TodoContext);
